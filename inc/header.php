@@ -9,9 +9,8 @@
   <title>Jobcool</title>
 </head>
 <body>
-  <nav class="navbar navbar-expand-sm navbar-light bg-light mb-4">
-    <div class="container bg-warning">
-      <a class="navbar-brand" href="#">Jobcool</a>
+  <nav class="navbar navbar-expand-sm navbar-light bg-warning mb-4">
+      <a class="navbar-brand" style="margin-left: 3%;" href="index.php">Jobcool</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -28,9 +27,8 @@
           </li>
         </ul>
       </div>
-  </div>
 </nav>
 
 <main>
-  <div class="container d-flex flex-column align-items-center bg-success">
+  <div class="container d-flex flex-column align-items-center">
    

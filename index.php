@@ -32,19 +32,20 @@ if (isset($_POST['submit'])) {
   } else {
    
     $salary = (int)filter_input(INPUT_POST, 'salary', FILTER_SANITIZE_SPECIAL_CHARS);
-    echo $salary;
+    
   }
 
   // Validate body
   if (empty($_POST['description'])) {
     $descriptionErr = 'Description is required';
+    
   } else {
     $description = filter_input(
       INPUT_POST,
       'description',
       FILTER_SANITIZE_FULL_SPECIAL_CHARS
     );
-    echo $description;
+    
   }
 
   if (empty($positionErr) && empty($companyErr) && empty($salaryErr) && empty($descriptionErr)) {
@@ -63,16 +64,16 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-    <img id="img1" src="/jobcool/img/gambo.jpg" class="w-25 mb-3 mt-5" alt="">
-    <h2 class="text-white">Jobcool</h2>
-    <?php echo isset($position) ? $position : ''; ?>
-    <p class="lead text-center text-white">Create a job here</p>
+    <img id="img1" src="/jobcool/img/logo.jpeg" class="w-25 mb-3 mt-5" alt="" style="border-radius: 30px;">
+    <h2>Jobcool</h2>
+   
+    <p class="lead text-center">Create a job here</p>
 
     <form method="POST" action="<?php echo htmlspecialchars(
       $_SERVER['PHP_SELF']
     ); ?>" class="mt-4 w-75">
       <div class="mb-3">
-        <label for="position" class="form-label text-white">Position</label>
+        <label for="position" class="form-label">Position</label>
         <input type="text" class="form-control <?php echo !$positionErr ?:
           'is-invalid'; ?>" id="position" name="position" placeholder="Enter the position" value="<?php echo $position; ?>">
         <div id="validationServerFeedback" class="invalid-feedback">
@@ -80,7 +81,7 @@ if (isset($_POST['submit'])) {
         </div>
       </div>
       <div class="mb-3">
-        <label for="company" class="form-label text-white">Company</label>
+        <label for="company" class="form-label">Company</label>
         <input type="text" class="form-control <?php echo !$companyErr ?:
           'is-invalid'; ?>" id="company" name="company" placeholder="Enter the company name" value="<?php echo $company; ?>">
             <div id="validationServerFeedback" class="invalid-feedback">
@@ -88,31 +89,27 @@ if (isset($_POST['submit'])) {
         </div>
       </div> 
       <div class = "mb-3">
-        <label for = "salary" class = "form-label text-white">Salary</label>
+        <label for = "salary" class = "form-label ">Salary</label>
         <input type="number" class="form-control <?php echo !$salaryErr ?:
           'is-invalid'; ?>" id="salary" name="salary" placeholder="Enter the salary" value="<?php echo $salary; ?>">
+          <div id="validationServerFeedback" class="invalid-feedback">
+          Please insert salary
+        </div>
       </div>
       <div class="mb-3">
-        <label for="des" class="form-label text-white">Description</label>
-        <textarea class="form-control <?php echo !$desciptionErr ?:
+        <label for="des" class="form-label">Description</label>
+        <textarea class="form-control <?php echo !$descriptionErr ?:
           'is-invalid'; ?>" id="description" name="description" placeholder="Enter your description"><?php echo $description; ?></textarea>
+            <div id="validationServerFeedback" class="invalid-feedback">
+            Please insert description
+          </div>
       </div> <br> <br>
       <div class="mb-3">
-        <input type="submit" name="submit" value="Send" class="btn btn-primary w-100">
+        <input type="submit" name="submit" value="Send" class="btn btn-warning w-100">
       </div>
     </form>
 <?php include 'inc/footer.php'; ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-#img1 {
-  border-radius: 30px;
-}
-</style>
-</head>
-<body>
 
 <!-- <h2>Rounded Image</h2>
 
