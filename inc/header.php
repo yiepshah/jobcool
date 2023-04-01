@@ -9,21 +9,23 @@
   <title>Jobcool</title>
 </head>
 <body>
-  <nav class="navbar navbar-expand-sm navbar-light bg-warning mb-4">
-      <a class="navbar-brand" style="margin-left: 3%;" href="index.php">Jobcool</a>
+  <nav class="navbar navbar-expand-sm navbar-light bg-success mb-4">
+      <a class="navbar-brand text-light" style="margin-left: 3%;" href="index.php">Jobcool</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+            <a class="nav-link text-light" href="login.php">Logout</a>
           <li class="nav-item">
-            <a class="nav-link" href="index.php">Add Job</a>
+            <a class="nav-link text-light" href="index.php">Add Job</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="job.php">Past Job</a>
+            <a class="nav-link text-light" href="job.php">Past Job</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.php">About</a>
+            <a class="nav-link text-light" href="about.php">About</a>
           </li>
         </ul>
       </div>
