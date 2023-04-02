@@ -1,4 +1,6 @@
-<?php include './config/database.php'; ?>
+<?php include './config/database.php'; 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,15 +19,21 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-            <a class="nav-link text-light" href="login.php">Logout</a>
+          <?php
+          if (isset($_SESSION['user_id'])): ?>
+            <a class="nav-link text-light" href="logout.php">Logout</a>
           <li class="nav-item">
-            <a class="nav-link text-light" href="index.php">Add Job</a>
+            <a class="nav-link text-light" href="addjob.php">Add Job</a>
+          </li>
+          <?php endif; ?>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="job.php">Jobs</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="job.php">Past Job</a>
+            <a class="nav-link text-light" href="signup.php">Sign Up</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="about.php">About</a>
+            <a class="nav-link text-light" href="login.php">Log In</a>
           </li>
         </ul>
       </div>
