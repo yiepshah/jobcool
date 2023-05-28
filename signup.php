@@ -21,6 +21,7 @@ if(isset($_POST['submit']))
     if(empty($cpassword)){
       $cpasswordErr = 'Confirm Password is required';
     } 
+    //hhahahahahahahaha
 
     if($password !== $cpassword){
       echo 'password do not match';
@@ -43,7 +44,7 @@ if(isset($_POST['submit']))
     try{
       mysqli_query($conn, $query);
     }catch(Exception $e){
-      
+
       echo "An error happens";
     }finally{
       header("location:login.php");
