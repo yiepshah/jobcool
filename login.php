@@ -12,6 +12,7 @@ if(isset($_POST['submit']))
   $email = $_POST['email'];
   $password = $_POST['password'];
 
+
   if(!empty($email)&& !empty($password))
     {//read from database
 
@@ -29,7 +30,7 @@ if(isset($_POST['submit']))
             {
             //if success
                $_SESSION['user_id']= $user_data['user_id'];
-                header("location:addjob.php");
+                header("location:job.php");
                 die;
             }
         }

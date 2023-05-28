@@ -90,7 +90,6 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-    <img id="img1" src="./img/logo.jpeg" class="w-25 mb-3 mt-5" alt="" style="border-radius: 30px;">
     <h2>Jobcool</h2>
    
     <p class="lead text-center">Create a job here</p>

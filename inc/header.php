@@ -24,17 +24,22 @@ session_start();
             <a class="nav-link text-light" href="logout.php">Logout</a>
           <li class="nav-item">
             <a class="nav-link text-light" href="addjob.php">Add Job</a>
+            <li class="nav-item">
+            <a class="nav-link text-light" href="profile.php">My Profile</a>
           </li>
+          </li>
+          <?php else: ?>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="signup.php">Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="login.php">Log In</a>
+            </li>
           <?php endif; ?>
           <li class="nav-item">
             <a class="nav-link text-light" href="job.php">Jobs</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="signup.php">Sign Up</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="login.php">Log In</a>
-          </li>
+          
         </ul>
       </div>
 </nav>

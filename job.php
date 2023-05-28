@@ -6,6 +6,7 @@ if (isset($_POST['submit'])) {
   $id = $_POST['id'];
   $deletesql = "DELETE FROM job WHERE id='$id'";
   $sdeleteresult = mysqli_query($conn, $deletesql);
+  
   header('Location:job.php');
   
 }
@@ -25,7 +26,7 @@ $job = mysqli_fetch_all($result, MYSQLI_ASSOC);
     <div class="card my-3 w-75">
      <div class="card-body text-center">
        <img style="height: 100px;" src=<?php echo "./img/" . $item['file_name']; ?> alt="" ><br>
-       <?php echo $item['position']; ?> / RM
+       <?php echo $item['position']; ?>  / RM
        <?php echo $item['salary']; ?> <br>
        <?php echo $item['company']; ?>
        <div class="text-secondary mt-2"> <?php echo $item[
