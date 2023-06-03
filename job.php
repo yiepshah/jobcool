@@ -25,21 +25,13 @@ $job = mysqli_fetch_all($result, MYSQLI_ASSOC);
   <?php foreach ($job as $item): ?>
     <div class="card my-3 w-75">
      <div class="card-body text-center">
-       <img style="height: 100px;" src=<?php echo "./img/" . $item['file_name']; ?> alt="" ><br>
-       <?php echo $item['position']; ?>  / RM
-       <?php echo $item['salary']; ?> <br>
-       <?php echo $item['company']; ?>
-       <div class="text-secondary mt-2"> <?php echo $item[
-         'description'
-       ]; ?> <br>
-        <?php echo date_format(
-        date_create($item['date']),
-        'g:ia \o\n l jS F Y'
-      ); ?></div>
-      
-      <button type="button" class="btn btn-danger mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          Delete
-      </button>
+       <img style="height: 100px;" src=<?php echo "./img/" . $item['file_name']; ?> alt="" ><br><br>
+       <h4><?php echo $item['position']; ?></h4>
+      <button type="button" class="btn btn-danger mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button><br><br>
+      <form action="detailjobs.php" method="POST">
+        <input type="hidden" name="id" value=<?php echo $item['id'];?>>
+        <input type="submit" name="submit" value="Detail" class="btn btn-secondary">
+      </form>
       
       </div>
     </div>
