@@ -2,60 +2,6 @@
 include 'inc/header.php';
 include("function.php");
 
-$allowed_ext_resume = array('docx', 'pdf');
-$allowed_ext_image = array('png', 'jpg', 'jpeg', 'gif');
-
-if(isset($_POST['submit']))
-{
-    //SOMETHING WAS POSTED
-    $email = $_POST['email'];
-    $name = $_POST['name'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    $cpassword = $_POST['cpassword']; 
-
-    $emailErr = $namelErr = $passwordErr = $cpasswordErr = '';
-
-    if(empty($password)){
-      $passwordErr = 'Password is required';
-    }
-    if(empty($cpassword)){
-      $cpasswordErr = 'Confirm Password is required';
-    } 
-    //hhahahahahahahaha
-
-    if($password !== $cpassword){
-      echo 'password do not match';
-    }
-    if (empty($_POST['name'])) {
-      $nameErr = 'name is required';
-    } 
-    if (empty($_POST['email'])) {
-      $emailErr = 'email is required';
-    } 
-
-
-    if(!empty ($email)&& !empty($password)&&!empty($cpassword) &&!empty($name))
-    {
-    //save to database
-    $user_id = random_num(20);
-    $query = "insert into user(user_id,name,email,password) values('$user_id','$name','$email','$password')";
-
-
-    try{
-      mysqli_query($conn, $query);
-    }catch(Exception $e){
-
-      echo "An error happens";
-    }finally{
-      header("location:login.php");
-    }
-    
-    die;
-    }else{
-      echo "please enter a valid form";
-    }
-    
-    }
 
 ?>
 
@@ -86,18 +32,6 @@ if(isset($_POST['submit']))
             <input class="form-control <?php echo !$cpasswordErr ?:
               'is-invalid'; ?>" type="password" name="cpassword"><br>
           </div>
-            <!-- <div class="mb-3">
-              <label for="resume">Resume:</label><br><br>
-              <input id='resume' type="file" name="resume"><br>
-              <div class="mb-3">
-              
-            </div>
-            <div class="mb-3">
-              <label for="image">image:</label><br><br>
-              <input id='image' type="file" name="image"><br>
-              <div class="mb-3">
-              
-        </div> -->
 
         <div class= "mb-3">
             <input type="submit" name="submit" value="Send" class="btn btn-success w-100">
