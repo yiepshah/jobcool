@@ -15,7 +15,11 @@ $user = mysqli_fetch_all($result, MYSQLI_ASSOC);
           <img class="mx-auto d-block mb-3" style="width: 304px;;height: 236px;px;object-fit:cover" src=<?php echo "./profile/image/" . $item['file_photo']; ?> alt="">
         <?php endif; ?>
         <h4>Name: <?php echo $item['name']; ?></h4>
-        <a class="btn btn-success" href="userdetails.php"> See Detail</a>
+        <form action="userdetails.php" method="post">
+          <input type="hidden" name="id" value=<?php echo $item['id'];?>>
+          <input type="submit" name="submit" value="Detail" class="btn btn-secondary">
+        </form>
+
         </div>
       </div>
     </div>
