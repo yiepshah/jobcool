@@ -27,12 +27,14 @@ $job = mysqli_fetch_all($result, MYSQLI_ASSOC);
      <div class="card-body text-center">
        <img style="height: 100px;" src=<?php echo "./img/" . $item['file_name']; ?> alt="" ><br><br>
        <h4><?php echo $item['position']; ?></h4>
+       <?php 
+       if (isset($_SESSION['user_id'])):?> 
       <button type="button" class="btn btn-danger mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button><br><br>
       <form action="detailjobs.php" method="POST">
         <input type="hidden" name="id" value=<?php echo $item['id'];?>>
         <input type="submit" name="submit" value="Detail" class="btn btn-secondary">
       </form>
-      
+      <?php endif;?>
       </div>
     </div>
   <?php endforeach; ?>

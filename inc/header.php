@@ -1,5 +1,8 @@
-<?php include './config/database.php'; 
+<?php
+ob_start();
 session_start();
+include './config/database.php'; 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,6 +30,9 @@ session_start();
             <li class="nav-item">
             <a class="nav-link text-light" href="profile.php">My Profile</a>
           </li>
+          <li class="nav-item">
+              <a class="nav-link text-light" href="listofusers.php">Users</a>
+            </li>
           </li>
           <?php else: ?>
             <li class="nav-item">
